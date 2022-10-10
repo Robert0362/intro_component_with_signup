@@ -24,12 +24,24 @@
     </div> 
     <div class="signup">
       <form>
-        <input type="text" placeholder="First Name" id="fName"> 
-        <input type="text" placeholder="Last Name" id="lName">
-        <input type="email" placeholder="Email Address" id="email">
-        <input type="password" placeholder="Password" id="pWord">
+        <div class="fName">
+          <input type="text" placeholder="First Name" id="fName"> 
+          <label id="fNameError" class="errorMsg"></label>
+        </div>
+        <div class="lName">
+          <input type="text" placeholder="Last Name" id="lName">
+          <label for="fName" id="lNameError" class="errorMsg"></label>
+        </div>
+        <div class="email">
+          <input type="email" placeholder="Email Address" id="email">
+          <label for="fName" id="emailError" class="errorMsg"></label>
+        </div>
+        <div class="password">
+          <input type="password" placeholder="Password" id="pWord">
+          <label for="fName" id="pWordError" class="errorMsg"></label>
+        </div>
       </form>
-        <button class="claim" id="claim">Claim your free trial</button>
+        <button class="claim" id="claim">CLAIM YOUR FREE TRIAL</button>
       <div class="termServ">
         By clicking the button, you are agreeing to our <span class="terms">Terms and Services</span> 
       </div>
