@@ -1,0 +1,144 @@
+:root{
+    --red: hsl(0, 100%, 74%) ;
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --darkBlue: hsl(249, 10%, 26%) ;
+    --grayishBlue: hsl(246, 25%, 77%);
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    font-size: 16px;
+    font-family: Poppins;
+    text-align: center;
+    background-image: url("/images/bg-intro-mobile.png");
+    background-color: var(--red);
+}
+
+.main{
+    margin: 4.5rem;
+}
+
+.title,.text,.trial{
+    color:#fff;
+    margin:2rem 0rem;
+}
+
+.title{
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.trial{
+    background-color: var(--blue);
+    border-radius: .75rem;
+    padding:1.5rem 2rem;
+    font-weight: 400;
+    box-shadow: 0px 8px 3px rgba(100, 100, 100, 0.5);
+}
+
+.trial:hover{
+    background-color: blueviolet;
+}
+
+.free{
+    font-weight: 600;
+}
+
+.signup{
+    background-color: #fff;
+    border-radius: .75rem;
+    padding: 1.5rem;
+    box-shadow: 0px 8px 3px rgba(100, 100, 100, 0.5);
+}
+
+input{
+    width: 80%;
+    font-size: 1rem;
+    color:var(--grayishBlue);
+    padding:1rem;
+    font-weight: 600;
+    border-radius: .25rem;
+    border: 1px solid var(--grayishBlue);
+    margin-bottom: .5rem;
+}
+
+.claim{
+    background-color: var(--green);
+    border-radius: .5rem;
+    color:#fff;
+    padding: 1rem 6.25rem;
+    margin-top: .5rem;
+    box-shadow: 0px 3px 3px rgba(114, 165, 114, 0.692);
+    margin-bottom: .25rem;
+    border:0;
+}
+
+.claim:hover{
+    background-color: aquamarine;
+}
+
+.termServ{
+    font-size: .75rem;
+    color:var(--grayishBlue)
+}
+
+.terms{
+    color:var(--red)
+}
+
+footer{
+    font-size: .75rem;
+}
+
+
+@media only screen and (min-width: 900px) {
+   
+    body{
+        background-image: url("/images/bg-intro-desktop.png");
+        padding:0;
+    }
+
+    .main{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+        grid-template-areas: 
+            ". topRight"
+            "topLeft bottomRight"
+            "bottomLeft bottomRight";
+        justify-items: center;
+        column-gap: 9rem;
+        padding:0;
+        align-content: start;
+    }
+    .title{
+        grid-area: topLeft;
+        align-self: end;
+        font-size: 4rem;
+        line-height: 4.5rem;
+        text-align: left;
+
+    }
+    .text{
+        grid-area: bottomLeft;
+        text-align: left;
+    }
+    .trial{
+        grid-area: topRight;
+        align-self: end;
+    }
+    .signup{
+        grid-area: bottomRight;
+        align-self:start;
+        padding:5rem 1rem;
+        text-align: center;
+    }
+    .claim{
+        padding:1.5rem;
+        margin:1rem 2.75rem;
+  
+    }
+   
+}
