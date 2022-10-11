@@ -7,19 +7,23 @@ const passWord = document.getElementById('pWord');
 
 function ValidateEmail(inputText)
 {
-	var mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-	if(inputText.value.match(mailformat))
-	{
-		alert("This is not a valid email address");
-		return false;
-		}
-}
+	let mailFormat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+    if(inputText.match(mailFormat))
+	{
+        return true;
+	}else {
+        document.getElementById('emailError').innerHTML = 'Looks like this is not an email';
+        email.value = '';
+        return false;
+      }
+}
 
 
 btnClaim.addEventListener('click', function(){
     let passValue= email.value;
     ValidateEmail(passValue);
+
     if(fName.value == ''){
         document.getElementById('fNameError').innerHTML = 'First Name cannot be empty';
     }
@@ -28,14 +32,18 @@ btnClaim.addEventListener('click', function(){
     }
     if(email.value == ''){
         document.getElementById('emailError').innerHTML = 'You are missing your email address';
-
     }
     if(passWord.value == ''){
         document.getElementById('pWordError').innerHTML = 'You are missing your password';
     }
 
-    fName.value = '';
-    lName.value = '';
-    email.value = '';
-    passWord.value = '';
+    if(fName.value !='' && lName.value != '' && email.value != '' && passWord.value != ''){
+        fName.value = '';
+        lName.value = '';
+        email.value = '';
+        passWord.value = ''
+        document.getElementById('pWordError').innerHTML = '';
+        document.getElementById('lNameError').innerHTML = '';
+        document.getElementById('fNameError').innerHTML = '';
+        };
 });
