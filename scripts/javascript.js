@@ -5,7 +5,7 @@ const email = document.getElementById('email');
 const passWord = document.getElementById('pWord');
 
 
-function ValidateEmail(inputText)
+function validateEmail(inputText)
 {
 	let mailFormat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -22,7 +22,7 @@ function ValidateEmail(inputText)
 
 btnClaim.addEventListener('click', function(){
     let passValue= email.value;
-    ValidateEmail(passValue);
+    validateEmail(passValue);
 
     if(fName.value == ''){
         document.getElementById('fNameError').innerHTML = 'First Name cannot be empty';
